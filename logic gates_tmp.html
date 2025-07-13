@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SWETHA.md</title>
+<title>logic gates.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -365,110 +365,337 @@ code {
           : 'default'
     });
   </script>
-<h1 id="pine">Pine</h1>
+<h1 id="logic-gates">LOGIC GATES</h1>
 <blockquote>
-<p>A simple infrared controller</p>
+<p>Basic Logic Gates</p>
 </blockquote>
-<p><img src="image-9.png" alt="alt text"></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#pine">Pine</a>
-<ul>
-<li><a href="#components">Components</a>
-<ul>
-<li><a href="#input-voltages">Input voltages</a>
-<ul>
-<li><a href="#flow-chart">Flow chart</a>
-<ul>
-<li><a href="#wavelength-equation">Wavelength equation</a>
-<ul>
-<li><a href="#infrared-range-test">Infrared range test</a></li>
-</ul>
+<pre><code>These are the fundamental gates used in digital circuits:
+</code></pre>
+<ol>
+<li>
+<p>AND Gate -</p>
+<p>Output is 1 only when all inputs are 1.</p>
 </li>
-</ul>
-</li>
-<li><a href="#i2c-protocol">I2C Protocol</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#i2c-timing-diagram">I2C Timing diagram</a></li>
-</ul>
-</li>
-</ul>
-<!-- /code_chunk_output -->
-<h2 id="components">Components</h2>
-<ul>
-<li>Microcontroller <strong>ATMSAMD21G</strong></li>
-<li>IR RED emitter <em>940nm</em></li>
-<li>IR Receiver</li>
-<li>Temperature / Humidity sensor</li>
-</ul>
-<h3 id="input-voltages">Input voltages</h3>
+</ol>
+<p><img src="file:///c:/Users/swetha/Desktop/vscode/image-10.png" alt="alt text"></p>
+<h5 id="truth-table">Truth table</h5>
 <table>
 <thead>
 <tr>
-<th>Components</th>
-<th>Voltages</th>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mcu</td>
-<td><code>1.63v</code> to <code>3.42v</code></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr>
-<td>Sensor</td>
-<td><code>1.9v</code> to <code>3.6v</code></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
-<h4 id="flow-chart">Flow chart</h4>
-<pre><code class="language-mermaid"><div class="mermaid">graph TD;
-A(START)--> B(CHECK TEMPERATURE);
-B--> C(IS THE ROOM HOT?);
-C-->|YES|D(TURN ON AIRCON);
-C-->|NO|E(TURN OFF AIRCON);
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{ &quot;signal&quot;: [
+  { &quot;name&quot;: &quot;A&quot;, &quot;wave&quot;: &quot;01.100110&quot; },
+  { &quot;name&quot;: &quot;B&quot;, &quot;wave&quot;: &quot;00.110011&quot; },
+  { &quot;name&quot;: &quot;Y&quot;, &quot;wave&quot;: &quot;00.100010&quot; }
+]}
 </div></code></pre>
-<h5 id="wavelength-equation">Wavelength equation</h5>
-<p>$$\lambda = \frac {v}{f}$$</p>
-<h6 id="infrared-range-test">Infrared range test</h6>
-<pre class="hljs"><code><div>{
-  &quot;data&quot;: {
-    &quot;values&quot;: [
-      {&quot;resistance(ohm)&quot;: 10, &quot;distance(cm)&quot;: 5},
-      {&quot;resistance(ohm)&quot;: 20, &quot;distance(cm)&quot;: 15},
-      {&quot;resistance(ohm)&quot;: 30, &quot;distance(cm)&quot;: 25}
-    ]
-  },
-  &quot;mark&quot;: &quot;line&quot;,
-  &quot;encoding&quot;: {
-    &quot;x&quot;: {&quot;field&quot;: &quot;resistance(ohm)&quot;, &quot;type&quot;: &quot;quantitative&quot;},
-    &quot;y&quot;: {&quot;field&quot;: &quot;distance(cm)&quot;, &quot;type&quot;: &quot;quantitative&quot;}
-  }
-}
+<ol start="2">
+<li>
+<p>OR Gate -</p>
+<p>Output is 1 when at least one input is 1.
+<img src="file:///c:/Users/swetha/Desktop/vscode/image-11.png" alt="alt text"></p>
+</li>
+</ol>
+<h5 id="truth-table">Truth table</h5>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{&quot;signal&quot;: [
+    {
+        &quot;name&quot;: &quot;A&quot;,
+        &quot;wave&quot;: &quot;10.001101&quot;
+    },
+    {
+        &quot;name&quot;: &quot;B&quot;,
+        &quot;wave&quot;: &quot;10.101010&quot;
+    },
+    {
+        &quot;name&quot;: &quot;C&quot;,
+        &quot;wave&quot;: &quot;10.101111&quot;
+    }
+]}
 </div></code></pre>
-<h4 id="i2c-protocol">I2C Protocol</h4>
-<pre><code class="language-mermaid"><div class="mermaid">sequenceDiagram
-MCU->>Sensor: Start 
-MCU->>Sensor: Slave address
-Sensor-->>MCU: Ack 
-MCU->>Sensor: Data
-Sensor-->>MCU: Ack
-MCU->>Sensor: Stop
+<ol start="3">
+<li>
+<p>NOT Gate -</p>
+<p>It inverts the input: 0 becomes 1, and 1 becomes 0.</p>
+<p><img src="file:///c:/Users/swetha/Desktop/vscode/image-12.png" alt="alt text"></p>
+</li>
+</ol>
+<h5 id="truth-table">Truth table</h5>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{ &quot;signal&quot;: [
+  { &quot;name&quot;: &quot;A&quot;, &quot;wave&quot;: &quot;01010101&quot; },
+  { &quot;name&quot;: &quot;Y&quot;,    &quot;wave&quot;: &quot;10101010&quot; }
+]}
 </div></code></pre>
-<h2 id="i2c-timing-diagram">I2C Timing diagram</h2>
-<pre class="hljs"><code><div>{signal: [
-   {
-       name: 'SCL',
-       wave: '1.010101010101'
-   },
-   {
-      name: 'SDA',
-      wave: '103.4.5.6.7.8,01',
-      data: ['D6','D5','D4','D0','R/W','ACK']
-   }
+<blockquote>
+<p>Universal Logic Gates</p>
+</blockquote>
+<pre><code> These gates can be used to create any other logic gate:
+</code></pre>
+<ol>
+<li>
+<p>NAND Gate -</p>
+<p>Output is 0 only when all inputs are 1.</p>
+<p><img src="file:///c:/Users/swetha/Desktop/vscode/image-13.png" alt="alt text"></p>
+</li>
+</ol>
+<h5 id="truth-table">Truth table</h5>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{ &quot;signal&quot;: [
+  { &quot;name&quot;: &quot;A&quot;,   &quot;wave&quot;: &quot;01011010&quot; },
+  { &quot;name&quot;: &quot;B&quot;,   &quot;wave&quot;: &quot;01100110&quot; },
+  { &quot;name&quot;: &quot;Y &quot;, &quot;wave&quot;: &quot;11101001&quot; }
+]}
+</div></code></pre>
+<ol start="2">
+<li>
+<p>NOR Gate -</p>
+<p>Output is 1 only when all inputs are 0.
+<img src="file:///c:/Users/swetha/Desktop/vscode/image-14.png" alt="alt text"></p>
+</li>
+</ol>
+<h5 id="truth-table">Truth table</h5>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{ &quot;signal&quot;: [
+  { &quot;name&quot;: &quot;A&quot;, &quot;wave&quot;: &quot;01011010&quot; },
+  { &quot;name&quot;: &quot;B&quot;, &quot;wave&quot;: &quot;01100110&quot; },
+  { &quot;name&quot;: &quot;Y&quot;, &quot;wave&quot;: &quot;10000001&quot; }
+]}
+</div></code></pre>
+<blockquote>
+<p>Exclusive Logic Gates</p>
+</blockquote>
+<pre><code> These gates can be used to create any other logic gates:
+</code></pre>
+<ol>
+<li>
+<p>XOR Gate -</p>
+<p>Output is 1 if inputs are different.
+<img src="file:///c:/Users/swetha/Desktop/vscode/image-15.png" alt="alt text"></p>
+</li>
+</ol>
+<h5 id="truth-table">Truth table</h5>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{ &quot;signal&quot;: [
+  { &quot;name&quot;: &quot;A&quot;, &quot;wave&quot;: &quot;01011010&quot; },
+  { &quot;name&quot;: &quot;B&quot;, &quot;wave&quot;: &quot;01100110&quot; },
+  { &quot;name&quot;: &quot;Y&quot;, &quot;wave&quot;: &quot;00111101&quot; }
+]}
+</div></code></pre>
+<ol start="2">
+<li>
+<p>XNOR Gate -</p>
+<p>Output is 1 if inputs are the same.
+<img src="file:///c:/Users/swetha/Desktop/vscode/image-16.png" alt="alt text"></p>
+</li>
+</ol>
+<h5 id="truth-table">Truth table</h5>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timing-diagram">Timing diagram</h5>
+<pre class="hljs"><code><div>{ &quot;signal&quot;: [
+  { &quot;name&quot;: &quot;A&quot;, &quot;wave&quot;: &quot;01011010&quot; },
+  { &quot;name&quot;: &quot;B&quot;, &quot;wave&quot;: &quot;01100110&quot; },
+  { &quot;name&quot;: &quot;Y&quot;, &quot;wave&quot;: &quot;11000010&quot; }
 ]}
 </div></code></pre>
 
