@@ -1,14 +1,14 @@
 
 # Linux Commands
 
-1. File & Directory Mangement -
+1. File & Directory Management - 
 
     ls - list files and directories
     ![alt text](image-7.png)
 
-   pwd - show current directory
-   
-   ![alt text](image-3.png)
+    pwd - show current directory
+
+    ![alt text](image-3.png)
 
    cd - change directory
    ![alt text](image-4.png)
@@ -27,5 +27,11 @@
 
    mv - move or remove files
    ![alt text](image-8.png)
+
+2. Viewing and Editing Files -
+
+    cat - view file contents 
+
+
 
    
