@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT & Services – Company Template</title>
+  <style>
+    :root{
+      --bg:#0b0f1a; --bg-soft:#12182a; --text:#e7ebf3; --muted:#9db0c9;
+      --accent:#4f8cff; --accent-2:#5be4a9; --card:#0f1424; --border:#203050;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,15,26,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav .brand{font-weight:700;letter-spacing:.4px}
+    .nav ul{display:flex;flex-wrap:wrap;gap:14px;list-style:none;margin:0;padding:0}
+    .btn{display:inline-block;padding:10px 16px;border:1px solid var(--border);border-radius:999px;background:linear-gradient(180deg,var(--bg-soft),var(--card)); color:var(--text)}
+    .btn.primary{border-color:transparent;background:linear-gradient(180deg,var(--accent),#1a5fff);color:#fff}
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    @media (max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.grid-3,.grid-2,.grid-4{grid-template-columns:1fr}}
+    section{padding:48px 0;border-bottom:1px solid var(--border)}
+    .hero{padding:72px 0;background:radial-gradient(1000px 400px at 10% -20%,rgba(79,140,255,.25),transparent 60%), radial-gradient(800px 400px at 90% -10%,rgba(91,228,169,.18),transparent 60%)}
+    .hero h1{font-size:clamp(28px,6vw,44px);margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .card{background:linear-gradient(180deg,var(--bg-soft),var(--card));border:1px solid var(--border);border-radius:16px;padding:18px}
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    @media (max-width:720px){.kpis{grid-template-columns:repeat(2,1fr)}}
+    .kpi{padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(79,140,255,.08),rgba(32,48,80,.2));border:1px solid var(--border);text-align:center}
+    .kpi .num{font-size:28px;font-weight:700}
+    .pill{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:var(--bg-soft);font-size:12px;color:var(--muted)}
+    .list{display:flex;flex-wrap:wrap;gap:10px}
+    .clients{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+    @media (max-width:900px){.clients{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:600px){.clients{grid-template-columns:repeat(2,1fr)}}
+    .client{padding:12px;border:1px dashed var(--border);border-radius:12px;text-align:center;color:var(--muted);background:var(--bg-soft)}
+    .form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .form .full{grid-column:1/-1}
+    .form input,.form select,.form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)}
+    .form textarea{min-height:120px;resize:vertical}
+    footer{padding:42px 0}
+    .footer-grid{display:grid;gap:18px;grid-template-columns:2fr 1fr 1fr 1fr}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:600px){.footer-grid{grid-template-columns:1fr}}
+    .tag{font-size:12px;opacity:.8;border:1px solid var(--border);padding:4px 8px;border-radius:999px}
+    .badge{font-size:11px;letter-spacing:.4px;background:rgba(91,228,169,.12);color:#c9ffe6;padding:4px 8px;border:1px solid var(--border);border-radius:999px}
+    .section-title{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .jobs .job{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--border);padding:14px;border-radius:14px;background:var(--bg-soft)}
+    .jobs .job .title{font-weight:600}
+    .spacer{height:6px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">ADELSOCIAL</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact" class="btn">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container grid grid-2">
+      <div>
+        <div class="pill">Solutions • Services • Testimonials • Careers • Blog • Contact • About</div>
+        <h1>Make your skills better</h1>
+        <p class="muted">We are a full service technology and digital solutions company with over 20 years of experience in industry.</p>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <a class="btn primary" href="#contact">Start a project together</a>
+          <a class="btn" href="#about">Read More</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="kpis">
+          <div class="kpi"><div class="num">99%</div><div class="muted">Client Retention</div></div>
+          <div class="kpi"><div class="num">7</div><div class="muted">Years of Service</div></div>
+          <div class="kpi"><div class="num">30+</div><div class="muted">Team of Professionals</div></div>
+          <div class="kpi"><div class="num">221+</div><div class="muted">Satisfied Clients</div></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="kpi"><div class="num">360°</div><div class="muted">Solution to your Business</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <span class="badge">Brand Kit • Digital • Tech</span>
+      </div>
+      <div class="grid grid-3" style="margin-top:12px">
+        <div class="card">
+          <h3>Content Marketing</h3>
+          <div class="list">
+            <span class="tag">Copywriting</span>
+            <span class="tag">Graphic Design</span>
+            <span class="tag">Animation</span>
+            <span class="tag">Photography</span>
+            <span class="tag">Video Production</span>
+          </div>
+          <p class="muted">Create content that really resonates with your target audience and bring together creative elements to get the message across.</p>
+        </div>
+        <div class="card">
+          <h3>Technology</h3>
+          <div class="list">
+            <span class="tag">Internet of Things</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Verilog HDL</span>
+            <span class="tag">Programming Languages</span>
+            <span class="tag">Basics of Electronics</span>
+            <span class="tag">PCB Designing</span>
+          </div>
+          <p class="muted">We focus on providing the right tool for product innovation and digital communication.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Marketing</h3>
+          <div class="list">
+            <span class="tag">Social Media</span>
+            <span class="tag">Campaign Strategy</span>
+            <span class="tag">Campaign Management</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Marketing Automation</span>
+            <span class="tag">Insights & Analytics</span>
+          </div>
+          <p class="muted">Tailor-made digital marketing services towards reaching the optimal success for every client.</p>
+        </div>
+      </div>
+      <div class="grid grid-3" style="margin-top:18px">
+        <div class="card">
+          <h3>HR Recruitment</h3>
+          <div class="list">
+            <span class="tag">Recruitment</span>
+            <span class="tag">Workforce Assessment</span>
+            <span class="tag">Staff Augmentation</span>
+          </div>
+          <p class="muted">We find the right people with the right skill set to meet your needs.</p>
+          <a class="btn" href="#contact">Read More</a>
+        </div>
+        <div class="card">
+          <h3>Domain & Hosting Services</h3>
+          <p class="muted">Reliable domains, scalable hosting and managed support for your web presence.</p>
+        </div>
+        <div class="card">
+          <h3>Brand Kit</h3>
+          <p class="muted">Logos, colors, typography and visual systems for consistent brand identity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients">
+    <div class="container">
+      <h2>Our Clients</h2>
+      <p class="muted">We pride ourselves in being trusted and having the opportunity to work with leading companies in their respective fields.</p>
+      <div class="clients" style="margin-top:12px">
+        <div class="client">The Mentoring Club</div>
+        <div class="client">La Nebbia Winery</div>
+        <div class="client">Aehr Test Systems</div>
+        <div class="client">ChronousCloud</div>
+        <div class="client">Omnicell</div>
+        <div class="client">UASTPA</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container grid grid-2">
+      <div>
+        <h2>From Zero to One</h2>
+        <p class="muted">We are an Information and Communication Technology (ICT) company specialized in the design and development of management systems. We combine vertical market expertise with the advantages from innovative technologies, such as Big Data, Social Networking, Cloud Computing, to optimize and integrate processes, applications and devices for customer service.</p>
+        <p class="muted">We believe that innovation is a key for increasing knowledge and developing new business opportunities. We experiment with new technologies in our industry, creating intuitive and easy-to-use tools, improving user experience, and helping companies find new business models.</p>
+      </div>
+      <div class="card">
+        <h3>Our Team</h3>
+        <p><strong>Designer</strong> – Translates aesthetics and functional needs into simple, intuitive user interfaces (UI/UX, Graphic Design) using innovative techniques.</p>
+        <p><strong>Developer</strong> – Tackles complex problems using Java, Scala and functional programming to build robust systems.</p>
+        <p><strong>Analyst</strong> – Ensures opportunity discovery, development and collaboration while managing complex information systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Our Projects</h2>
+      <div class="grid grid-3" style="margin-top:12px">
+        <div class="card"><h3>ITS SCADA</h3><p class="muted">Industrial monitoring and control solutions.</p></div>
+        <div class="card"><h3>Highway Tolling</h3><p class="muted">Reliable and scalable tolling systems.</p></div>
+        <div class="card">
+          <div class="grid grid-2">
+            <div class="kpi"><div class="num">82</div><div class="muted">Total Projects</div></div>
+            <div class="kpi"><div class="num">47</div><div class="muted">Satisfied Customers</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <div class="section-title">
+        <h2>Blog</h2>
+        <a class="btn" href="#">Read More</a>
+      </div>
+      <p class="muted">Some tips about technology, digital marketing, design, and more.</p>
+      <div class="grid grid-3" style="margin-top:12px">
+        <div class="card">
+          <h3>The Role of Colors in Web Design</h3>
+          <p class="muted">Color is a major design element, and using it right can greatly benefit a project.</p>
+        </div>
+        <div class="card">
+          <h3>6 Mobile Marketing Trends that Change...</h3>
+          <p class="muted">Before the era of technological advances, money spent on marketing and...</p>
+        </div>
+        <div class="card">
+          <h3>6 Ways to Promote Your Consulting...</h3>
+          <p class="muted">Finding the right web consultants and strategies to grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="careers">
+    <div class="container">
+      <div class="section-title">
+        <h2>Careers</h2>
+        <span class="badge">We are hiring</span>
+      </div>
+      <div class="jobs" style="margin-top:12px">
+        <div class="job">
+          <div>
+            <div class="title">Senior Java Developer</div>
+            <div class="muted">Visakhapatnam • Full-time</div>
+          </div>
+          <a class="btn primary" href="#contact">Apply now</a>
+        </div>
+        <div class="job">
+          <div>
+            <div class="title">Front-End Developer</div>
+            <div class="muted">Remote / Hybrid</div>
+          </div>
+          <a class="btn" href="#contact">Apply now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Let’s start a project together</h2>
+      <form class="form card" onsubmit="event.preventDefault(); alert('Thanks! We will get in touch.');">
+        <input type="text" placeholder="First name" required />
+        <input type="text" placeholder="Last name" />
+        <input type="email" class="full" placeholder="E-mail" required />
+        <input type="text" placeholder="Phone" />
+        <input type="text" placeholder="Company" />
+        <input type="text" placeholder="Category" />
+        <input type="text" placeholder="Country" />
+        <input type="text" placeholder="State" />
+        <input type="text" placeholder="City" />
+        <input type="text" placeholder="Zip / Postal Code" />
+        <input type="text" class="full" placeholder="Subject" />
+        <textarea class="full" placeholder="Message"></textarea>
+        <button class="btn primary full" type="submit">Submit</button>
+      </form>
+      <div style="margin-top:16px" class="muted">
+        Tel: +1 408 247 5929 • Fax: +1 408 247 5931 • Visakhapatnam<br/>
+        Address: Visakhapatnam • Phone: +919773926687, 8901791767 • Email: 11111@gmail.com
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>ADELSOCIAL</h3>
+        <p class="muted">We are happy to hear from you. “We work on innovative projects and develop ideas.”</p>
+        <div class="list">
+          <span class="tag">Success Stories</span>
+          <span class="tag">Get in Touch</span>
+          <span class="tag">FAQ</span>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Technology</li>
+          <li>Digital Marketing</li>
+          <li>Content Marketing</li>
+          <li>HR Recruiting</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Careers</li>
+          <li>Sitemap</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Do Not Sell My Personal Info</li>
+          <li>Terms of Use</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="border-top:1px solid var(--border);margin-top:18px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div class="muted">© 2020–2025 JWay Group, Inc. • All Rights Reserved • All Rights Reserved © 2021 RAYONIT</div>
+      <div class="muted">EN</div>
+    </div>
+  </footer>
+</body>
+</html>
